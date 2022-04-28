@@ -62,5 +62,8 @@ print(person.lower())
 print(person.upper())
 
 print("\n")
-
-
+#Famous Quote
+print("Robert Frost once said: \nThe woods are lovely, dark and deep,\nBut I have promises to keep,\nAnd miles to go before I sleep,\nAnd miles to go before I sleep.")
+print("\n")
+famous_poet = "Robert frost"
+print(f"{famous_poet} once said: \nThe woods are lovely, dark and deep,\nBut I have promises to keep,\nAnd miles to go before I sleep,\nAnd miles to go before I sleep.")
