@@ -67,3 +67,31 @@ print("Robert Frost once said: \nThe woods are lovely, dark and deep,\nBut I hav
 print("\n")
 famous_poet = "Robert frost"
 print(f"{famous_poet} once said: \nThe woods are lovely, dark and deep,\nBut I have promises to keep,\nAnd miles to go before I sleep,\nAnd miles to go before I sleep.")
+
+
+# NUMBERS
+#Integers - just a whole number. You can do math.
+# 2 + 3
+# 3 - 2
+# 2 * 3
+# 3 / 2
+# 3 ** 2
+
+# 2 + 3* 4 # spacing has no effect
+
+# # Floats - decimals
+# 0.1 + 0.2
+
+# 4 / 2 # all division results in a float. 2.0 will return
+# 1 + 2.0 # returnds a float because any operation that uses float will return a float; even if output is a whole number
+print("\n")
+fourteen_million = 14_000_000 # can use underscores for large numbers and easy readability
+print(fourteen_million) # python will only print the numbers and not the underscores
+
+#assign multiple variables
+x, y, z = 1, 2, 3
+print(y)
+
+# Constants - python doesn't have built in constants. THe pythonic way is to use all CAPITALS
+MAX_LIVES = 1000
+print(MAX_LIVES)
