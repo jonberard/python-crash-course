@@ -30,6 +30,82 @@ print(car_companies)
 car_companies.append('Ford') # Will add Ford to the end of the list.
 print(car_companies)
 
-# insert element into list
+# insert element into list - requires position and element
 car_companies.insert(0, 'Ferarri')
 print(car_companies)
+
+# removing an element from list
+# if you know the position to delete use del
+del car_companies[0]
+print(car_companies)
+
+# you can remove an elemnt to work with by using pop()
+popped_car_company = car_companies.pop()
+print(car_companies)
+print(popped_car_company)
+
+#you can pop any element in list by adding position in parentheses
+first_car = car_companies.pop(1)
+print(f'My first car was a {first_car.title()}.')
+
+# if you do NOT know the position of the element to remove but you do know the value, use the remove method.
+# it is similar to delete except you remove by value and not position. 
+print(car_companies)
+car_companies.remove('Honda')
+print(car_companies)
+
+car_companies = ['Hyundai', 'Ford', 'Chevorlet', 'Chrysler', 'Dodge', 'Subaru', 'Ferarri']
+too_expensive_car = 'Ferarri'
+car_companies.remove(too_expensive_car)
+print(car_companies)
+
+# Challenge Section 1
+# 3-4
+print('\n')
+jam_list = ['David Gilmour', 'Roger Waters', 'Jimmy Page', 'Jimmy Hendrix', 'Mark Knopfler', 'Jeff Beck']
+print(f'I\'d love to jam with {jam_list[0].title()} one day.')
+print(f'I\'d love to jam with {jam_list[1].title()} one day.')
+print(f'I\'d love to jam with {jam_list[2].title()} one day.')
+print(f'I\'d love to jam with {jam_list[3].title()} one day.')
+print(f'I\'d love to jam with {jam_list[4].title()} one day.')
+print(f'I\'d love to jam with {jam_list[5].title()} one day.')
+
+# 3-5 - remove and replace guest
+print(f'It turns out {jam_list[3]} can\'t make it tonight after all.')
+dead_guitarist = jam_list.pop(3)
+jam_list.append('The Edge')
+print(f'Since {dead_guitarist.title()} can\'t make it, I took it upon myself to invite {jam_list[-1].title()} instead! Cheers!')
+
+# 3-6 More Guests!
+print('Holy shit we found a bigger stage! Let\'s invite more people.')
+jam_list.insert(0, 'Andy Timmons')
+jam_list.insert(4, 'John Mayer')
+jam_list.append('Kieth Richards')
+print(f'I\'d love to jam with {jam_list[0].title()} one day.')
+print(f'I\'d love to jam with {jam_list[1].title()} one day.')
+print(f'I\'d love to jam with {jam_list[2].title()} one day.')
+print(f'I\'d love to jam with {jam_list[3].title()} one day.')
+print(f'I\'d love to jam with {jam_list[4].title()} one day.')
+print(f'I\'d love to jam with {jam_list[5].title()} one day.')
+print(f'I\'d love to jam with {jam_list[6].title()} one day.')
+print(f'I\'d love to jam with {jam_list[7].title()} one day.')
+print(f'I\'d love to jam with {jam_list[8].title()} one day.')
+
+# 3-7 Shrinking List
+print('Well, the excitement has died off. We got kicked to the community center. Only room for 3!')
+print(f'I\'m sorry, {jam_list.pop(6)}. I gotta let ya go. It\'s just not gonna happen tonight.')
+print(f'I\'m sorry, {jam_list.pop(0)}. I gotta let ya go. It\'s just not gonna happen tonight.')
+print(f'I\'m sorry, {jam_list.pop(1)}. I gotta let ya go. {jam_list[0]} is the better guitarist anyways.')
+print(f'I\'m sorry, {jam_list.pop(3)}. I gotta let ya go. It\'s just not gonna happen tonight.')
+print(f'I\'m sorry, {jam_list.pop(1)}. I gotta let ya go. It\'s just not gonna happen tonight.')
+print(f'I\'m sorry, {jam_list.pop(3)}. I gotta let ya go. It\'s just not gonna happen tonight.')
+print('\n')
+print(f'Hey, {jam_list[0]}, {jam_list[1]}, {jam_list[2]}, great news! You guys are still invited.')
+
+# empty jam
+del jam_list[-1]
+del jam_list[-1]
+del jam_list[-1]
+print(jam_list)
+
+# Organizing a List
