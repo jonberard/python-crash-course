@@ -109,3 +109,74 @@ del jam_list[-1]
 print(jam_list)
 
 # Organizing a List
+car_companies.sort() # permanently alphabetizes the list
+print(car_companies)
+
+car_companies.sort(reverse=True) # this alphabetically reverses the list permantly by passing this argument.
+print(car_companies)
+
+# temporarily sorting a list using sorted()
+motorcycle_brands = ['ducati', 'yamaha', 'honda']
+print(motorcycle_brands)
+print(sorted(motorcycle_brands)) # temporarily sorts the list but then reverts back to roiginal on next call
+print(motorcycle_brands)
+
+# reversing the order of a list
+car_companies.sort()
+print(car_companies)
+
+car_companies.reverse() # reverses the list permanently
+print(car_companies)
+
+#Finding the LENGTH of a list with len()
+print(len(car_companies))
+
+#LIST CHALLENGE 2
+# 3-8
+places_to_vist = ['Maldives', 'Minorca', 'Pacific Islands', 'Australia', 'New Zealand']
+print(places_to_vist)
+print(sorted(places_to_vist))
+print(places_to_vist)
+print(sorted(places_to_vist, reverse=True)) # This reverse the order and is NOT permanent
+print(places_to_vist)
+
+print('\n')
+places_to_vist.reverse()
+print(places_to_vist)
+
+print('\n')
+places_to_vist.reverse()
+print(places_to_vist)
+
+print('\n')
+places_to_vist.sort()
+print(places_to_vist)
+
+print('\n')
+places_to_vist.sort(reverse=True)
+print(places_to_vist)
+
+# 3-9 Guitar Guests
+print('\n')
+print(f"I am inviting {len(jam_list)} guitar players to play onstage with me tonight.")
+
+# 3-10 Every Funciton
+print('\n')
+instruments = ['Drums', 'Guitar', 'Bass', 'Piano', 'Vocals']
+print(instruments)
+instruments.append('Whistle')
+print(instruments)
+not_an_instrument = instruments.pop()
+print(f'C\'mon, everyone knows the {not_an_instrument} is not an instrument!')
+instruments.insert(1, 'Percussion')
+print(instruments)
+instruments.remove('Percussion')
+print(instruments)
+print(sorted(instruments))
+print(sorted(instruments, reverse=True))
+print(instruments)
+instruments.sort()
+print(instruments)
+instruments.sort(reverse=True)
+print(instruments)
+
