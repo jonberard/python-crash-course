@@ -167,6 +167,58 @@ for player in quarterbacks[1:4]:
     print(f'\t{player}')
 
 print('The last 3 quarterbacks in the list are:')
-for player in quarterbacks[-1:-4]:
+for player in quarterbacks[1:]:
     print(f'\t{player}')
 print(quarterbacks)
+print('\n')
+
+# 4-11 My Pizzas, Your Pizzas
+friend_pizzas = pizzas[:]
+print(friend_pizzas)
+pizzas.append('Sausage')
+friend_pizzas.append('Hawaiian')
+
+print('My favorite pizzas are:')
+for pizza in pizzas:
+    print(f'\t{pizza}')
+
+print('My friend\'s favorite pizzas are:')
+for pizza in friend_pizzas:
+    print(f'\t{pizza}')
+print('\n')
+
+# TUPLES
+# tuples are simliar to lists except they're immutable(can't be changed)
+dimensions = (50, 100, 50)
+print(dimensions[0])
+print('\n')
+
+#tuples are technically defined by the comma. the parentheses make them look neater
+measurement = (5,) # needs the trailing comma to be a tuple with single element
+
+#looping through tuples is same as lists
+for dimension in dimensions:
+    print(f'{dimension}')
+
+# You can't modify tuple but you can add new elements to the reassignment of the variable
+for dimension in dimensions:
+    print(f'The original dimensions are: \n{dimension}')
+
+dimensions = (400, 500)
+for dimension in dimensions:
+    print(f'The new dimensions are: \n{dimension}')
+print('\n')
+
+# Challenge 4-13 Buffet
+buffet_foods = ('salad', 'pasta', 'fruit', 'meat', 'dessert')
+for food in buffet_foods:
+    print(f'{food}')
+print('\n')
+
+# python shoudlr eject change
+# buffet_foods[0] = 'ice cream'
+
+# restaurant changes
+buffet_foods = ('spaghetti', 'salad', 'fruit', 'steak', 'dessert')
+for food in buffet_foods:
+    print(f'{food}')
