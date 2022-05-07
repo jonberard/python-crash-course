@@ -223,3 +223,14 @@ for number in ordinal_numbers:
         print(f"{number}rd")
     else:
         print(f"{number}th")
+
+# SELF CHALLENGE - Check to see if flight is avaible.
+print('\n')
+available_flights = ['UAL2123', "AAL234", "SWA345", "AAY1235"]
+user_flights = ['ual2123', "SWA235", 'AAY1235', 'JBU1078']
+available_flights_lower = [flight.lower() for flight in available_flights]
+for user_flight in user_flights:
+    if user_flight.lower() in available_flights_lower:
+        print(f"{user_flight.upper()} is available to book!") #converts back to upper
+    else:
+        print(f"{user_flight} is sold out. Try searching again to a different destination.")
