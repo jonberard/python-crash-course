@@ -1,0 +1,110 @@
+# DICTIONARIES
+# simple example of dictionary and its key/value pairs
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0['color']) #a access values in dictionary by calling key in []
+print(alien_0['points'])
+
+# asigning values to new variable for recall
+new_score = alien_0['points']
+print(f'You just scored {new_score} points!')
+
+# Adding information to dictionary
+print('\n')
+alien_0['x_position'] = 0
+alien_0['y_position'] = 25
+print(alien_0)
+
+# Startin with an EMPTY dictionary
+print('\n')
+alien_0 = {}
+alien_0['color'] = 'green'
+alien_0['points'] = 5
+print(alien_0)
+
+# modifying position of player in game example
+print("\n")
+alien_0 = {'x_position': 0, 'y_position': 25, 'speed': 'medium'}
+print(f"Original position: {alien_0['x_position']}")
+
+# move the alien to the right
+#Determine how far to move the alien based on its current speed
+if alien_0['speed'] == 'slow':
+    x_increment = 1
+elif alien_0['speed'] == 'medium':
+    x_increment = 2
+else:
+    # fast alien
+    x_increment = 3
+
+# The new position is the old position plus the increment
+alien_0['x_position'] = alien_0['x_position'] + x_increment
+
+print(f"New position: {alien_0['x_position']}") #looks like "" work better without much thought or escapes
+
+
+# REMOVING key value pairs
+print('\n')
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+
+# deletes the key/value 'points PERMANENTLY
+del alien_0['points']
+print(alien_0)
+
+# Dictionary of similar objects
+print('\n')
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'go',
+    'phil': 'javascript',
+}
+print(f"Sarah's favorite language is: {favorite_languages['sarah'].title()}.")
+# optionally you can save it in a variable
+language = favorite_languages['sarah'].title()
+print(f"Sarah's favorite language is: {language}.")
+
+# using the GET() method to retrieve key 
+# get produces a default value if the key doesn't exist instead of an errror
+# second value in GET() is the default value it assigns
+print("\n")
+alien_0 = {'color': 'green', 'points': 5}
+point_value = alien_0.get('points', 'no point value assigned')
+print(point_value)
+point_value = alien_0.get('point', 'no point value assigned') # used 'point' to produce default
+print(point_value)
+# if no second value is assigned for GET(), you get 'none'
+# none is a special value in python that means 'no value exists' and is NOT an error
+
+#Challenge 1
+# 6-1 Person
+print('\n')
+favorite_person = {'first_name': 'Brooke', 'last_name': 'B', 'age': 36, 'city': 'Austin'}
+print(f"{favorite_person['first_name'].title()}")
+print(f"{favorite_person['last_name']}")
+print(f"{favorite_person['age']}")
+print(f"{favorite_person['city']}")
+
+# 6-2 Favorite Numbers
+print('\n')
+favorite_numbers = {
+    'jon': 12,
+    'brooke': 7,
+    'stan': 99,
+    'gloria': 55,
+}
+for name in favorite_numbers:
+    print(f"{name.title()}'s favorite number is {favorite_numbers[name]}.")
+
+# 6-3 Glossary
+print('\n')
+glossary = {
+    'variable': 'container for different data types for recall',
+    'string': 'variable type made of characters only strung together',
+    'number': 'whole integer',
+    'float': 'number with a decimal',
+    'list': 'single container that holds multiple variables for recall'
+}
+
+for word in glossary:
+    print(f"{word.title()}:\n\t-{glossary[word]}")
