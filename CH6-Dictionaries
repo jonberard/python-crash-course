@@ -108,3 +108,83 @@ glossary = {
 
 for word in glossary:
     print(f"{word.title()}:\n\t-{glossary[word]}")
+
+# Looping through ALL KEY VALUE pairs
+print('\n')
+user_0 = {
+    'username': 'brickhouse',
+    'first': 'brick',
+    'last': 'house',
+}
+
+for key, value in user_0.items():
+    print(f'{key}')
+    print(f'{value}')
+
+print('\n')
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'go',
+    'phil': 'javascript',
+}
+
+for name, language in favorite_languages.items():
+    print(f"{name.title()}'s favorite programming language is {language.title()}.")
+
+#Looping through the KEYS only with keys()
+print('\n')
+for name in favorite_languages.keys():
+    print(name.title())
+
+print('\n')
+friends = ['phil', 'sarah']
+for name in favorite_languages.keys():
+    print(f"Hi {name.title()}!")
+
+    if name in friends: #this access the value of name if the conditions are met
+        language = favorite_languages[name].title()
+        print(f"\t{name.title()}, I see you love {language.title()}")
+
+# using keys() to find out if certain person was polled
+print('\n')
+if 'erin' not in favorite_languages.keys():
+    print("Erin, please take the poll.")
+
+# Looping through dictionary keys in particular order
+print("\n")
+for name in sorted(favorite_languages.keys()): # the sorted() function takes an iterable
+    print(f"{name.title()}, thank you for taking the poll!")
+
+# Looping through all vallues in a dictionary
+print("\n")
+print("The following languages have been mentioned: ")
+for language in favorite_languages.values():
+    print(f"- {language.title()}")
+
+# Using set() - a collection in which each item must be unique
+print("\n")
+
+print("The following languages have been mentioned: ")
+for language in set(favorite_languages.values()):
+    print(f"- {language.title()}")
+
+# Build a SET specificallu using {}
+print("\n")
+languages = {"python", "c", "javascript", "go"}
+print(languages)
+# if you see braces but no values, it's most likely a set
+
+#CHALLENGE 2
+# 6-4 glossary
+print('\n')
+glossary = {
+    'variable': 'container for different data types for recall',
+    'string': 'variable type made of characters only strung together',
+    'number': 'whole integer',
+    'float': 'number with a decimal',
+    'list': 'single container that holds multiple variables for recall'
+}
+
+for key, value in glossary.items():
+    print(f"{key.title()} - {value.capitalize()}")
