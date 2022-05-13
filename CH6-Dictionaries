@@ -188,3 +188,203 @@ glossary = {
 
 for key, value in glossary.items():
     print(f"{key.title()} - {value.capitalize()}")
+
+# 6-5 Rivers
+print("\n")
+rivers = {
+    'Nile': 'Egypt',
+    'Mississippi': 'United States',
+    'Amazon': 'Brazil',
+}
+
+for key, value in rivers.items():
+    print(f"The {key.title()} river runs through {value.title()}.")
+
+for name in rivers.keys():
+    print(f"{name.title()}")
+
+for name in rivers.values():
+    print(f"{name.title()}")
+
+# 6-6 Polling
+print("\n")
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'go',
+    'phil': 'javascript',
+}
+
+users = ['jen', 'devin', 'sarah', 'jens']
+
+for name in users:
+    if name in favorite_languages.keys():
+        print(f"{name.title()} thanks for taking the poll.")
+    else:
+        print(f"{name.title()}, please take the poll at your earliest convenience.")
+
+# NESTING
+# a list of dictionaries
+print("\n")
+alien_0 = {'color': 'green', 'points': 5}
+alien_1 = {'color': 'yellow', 'points': 10}
+alien_2 = {'color': 'red', 'points': 15}
+
+# stores dictionaries in list
+aliens = [alien_0, alien_1, alien_2]
+
+#prints individual dictionary
+for alien in aliens:
+    print(alien)
+
+# using range() to create numerous aliens automatically
+print("\n")
+aliens = [] # empy list to store aliens
+
+for alien_number in range(30): #looping the range to create aliens
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+
+    aliens.append(new_alien) # each new alien added to the list
+
+for alien in aliens[:5]: # show the first 5 aliens
+    print(alien)
+print("...")
+
+print(f" Total number of aliens created: {len(aliens)}.") # show how many aliens have been created
+
+# Change the values for certain number of alien objects
+for alien in aliens[:3]:
+    if alien['color'] == 'green':
+        alien['color'] = 'yellow'
+        alien['points'] = 10
+        alien['speed'] = 'medium'
+
+for alien in aliens[:5]:
+    print(alien)
+
+# a LIST in a DICTIONARY
+print("\n")
+
+pizza = {
+    'crust': 'thick',
+    'toppings': ['mushrooms', 'extra cheese'],
+} # stores info from pizza being ordered
+
+print(f"You ordered a {pizza['crust']}-crust pizza "
+    "with the following toppings:") # summarizes the order
+
+for topping in pizza['toppings']:
+    print(f"\t{topping}")
+
+# another example
+print('\n')
+favorite_languages = {
+    'jen': ['python', 'ruby'],
+    'sarah': ['c',],
+    'edward': ['go', 'ruby'],
+    'phil': ['javascript', 'c++'],
+}
+
+for name, languages in favorite_languages.items():
+    print(f"\n{name.title()}'s favorite languages are:")
+    for language in languages:
+        print(f"\t{language.title()}")
+
+# a DICTIONARY ina DICTIONARY
+users = {
+    'aeinstein': {
+        'first': 'albert',
+        'last': 'einstein',
+        'location': 'princeton'
+    },
+    'mcurie': {
+        'first': 'marie',
+        'last': 'curie',
+        'location': 'paris',
+
+    },
+}
+for username, user_info in users.items():
+    print(f"\nUsername: {username}")
+    full_name = f"{user_info['first'].title()} {user_info['last'].title()}"
+    location = f"{user_info['location'].title()}"
+
+    print(f"\tFull name: {full_name}")
+    print(f"\tLocation: {location}")
+
+# EOC Challenge
+# 6-7 People
+print('\n')
+favorite_person_1 = {'first_name': 'Brooke', 'last_name': 'B', 'age': 36, 'city': 'Austin',}
+favorite_person_2 = {'first_name': 'David', 'last_name': 'gilmour', 'age': 72, 'city':'Brighton',}
+favorite_person_3 = {'first_name': 'kieth', 'last_name': 'richards', 'age': 76, 'city': 'London',}
+
+people = [favorite_person_1, favorite_person_2, favorite_person_3] # creates list of dictionaries
+
+for person in people:
+    full_name = f"{person['first_name'].title()} {person['last_name'].title()}"
+    print(f"\n{full_name}: \tage - {person['age']} \tcity - {person['city']}")
+# print(f"{favorite_person['first_name'].title()}")
+# print(f"{favorite_person['last_name']}")
+# print(f"{favorite_person['age']}")
+# print(f"{favorite_person['city']}")
+
+# 6-8 Pets
+print('\n')
+pet_1 = {'type': 'dog', 'name': 'fred', 'owner': 'jane'}
+pet_2 = {'type': 'snake', 'name': 'goliath', 'owner': 'cynthia'}
+pet_3 = {'type': 'hamster', 'name': 'pink', 'owner': 'jon'}
+
+pets = [pet_1, pet_2, pet_3]
+
+for pet in pets:
+    print(f"{pet['name'].title()} is a {pet['type']} owned by {pet['owner'].title()}.")
+
+# 6-9 Favorite Places
+print('\n')
+favorite_places = {
+    'jane': ['montanta', 'california', 'new york'],
+    'jon': ['california', 'florida', 'maine'],
+    'dennis': ['texas', 'new mexico', 'arizona'],
+}
+
+for key, value in favorite_places.items():
+    print(f"\n{key.title()}'s favorite states in the US:")
+    for state in value:
+        print(f"\t{state.title()}")
+
+# 6-10 Favorite Numbers
+print('\n')
+favorite_numbers = {
+    'jon': [12, 10, 8],
+    'brooke': [7, 99, 999],
+    'stan': [99, 1, 66],
+    'gloria': [55, 69, 4],
+    }
+
+print("FAVORITE NUMBERS")
+for k, v in favorite_numbers.items(): #loops through the dictionary
+    print(f"\n{k.title()}:")
+    for number in v: # loops through the values list
+        print(f"\t{number}")
+
+# 6-11 Cities
+print('\n')
+cities = {
+    'austin': {
+        'state': 'Texas',
+        'population': 1_000_000,
+        'climate': 'tropical',
+    },
+    'sacramento': {
+        'state': 'california',
+        'population': 700_000,
+        'climate': 'dry',
+    },
+}
+
+for key, value in cities.items():
+    print(f"\n{key.title()} facts:")
+    print(f"\tIn the state of: {value['state'].title()}.")
+    print(f"\tPopulation size: {value['population']}.")
+    print(f"\tClimate type: {value['climate']}.")
