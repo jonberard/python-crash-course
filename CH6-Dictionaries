@@ -388,3 +388,5 @@ for key, value in cities.items():
     print(f"\tIn the state of: {value['state'].title()}.")
     print(f"\tPopulation size: {value['population']}.")
     print(f"\tClimate type: {value['climate']}.")
+
+# 6-12 Extensions
