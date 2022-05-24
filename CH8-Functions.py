@@ -51,7 +51,7 @@ def describe_pet(animal_type, pet_name):
 describe_pet(animal_type='hamster', pet_name='pink')
 describe_pet(pet_name='pink', animal_type='hamster') # these two calls are indeifferent because keywords
 
-# DEFAULT Values - python uses defauly arg value if one is provided
+# DEFAULT Values - python uses default arg value if one is provided
 def describe_pet(pet_name, animal_type='dog'): # 'dog' is defautl value passed
     """Display inf about pet"""
     print(f"\nI have a {animal_type}.")
@@ -100,3 +100,236 @@ def describe_city(city_name, country_name='the United States'):
 describe_city('Dallas')
 describe_city(city_name='Austin')
 describe_city(city_name='paris', country_name='france')
+
+# RETURN VALUES
+# funcs don't have to always display output directly. 
+# they can process data and then return set of values back to whatever called func 
+# print("\n")
+# def get_formatted_name(first_name, last_name):
+#     """Return full name formatted"""
+#     full_name = f"{first_name} {last_name}"
+#     return full_name.title()
+
+# musician = get_formatted_name('david', 'gilmour')
+# print(musician)
+
+# middle name default - may not always have middle name
+print('\n')
+def get_formatted_name(first_name, last_name, middle_name=''):
+    """Return full name formatted"""
+    if middle_name: # python interprets non-empty strings as True.
+        # so middle_name evaluates to True is a middle name argument is in the function call
+        full_name = f"{first_name} {middle_name} {last_name}"
+    else:
+        full_name = f"{first_name} {last_name}"
+    
+    return full_name.title()
+
+musician = get_formatted_name('John', 'hooker', 'lee')
+print(musician)
+musician = get_formatted_name('jimi', 'hendrix')
+print(musician)
+    
+# Returning a Dictionary
+# funcs can return any kind of data value you need
+# def build_person(first_name, last_name):
+#     """Return a dictionary of information about person"""
+#     person = {'first': first_name, 'last': last_name}
+#     return person
+
+# musician = build_person('David', 'Gilmour')
+# print(musician)
+
+# extend func to add age
+print('\n')
+def build_person(first_name, last_name, age=None):
+    """Return a dictionary of information about person"""
+    person = {'first': first_name, 'last': last_name}
+    if age: # runs if age is True (or has a number in it). None evaluates to False (left empty)
+        person['age'] = age
+    return person
+
+musician = build_person('Jimi', 'Hendrix', age=27)
+print(musician)
+
+# using a func with while loop
+# def get_formatted_name(first_name, last_name):
+#     """Return a full name, neatly formatted"""
+#     full_name = f"{first_name} {last_name}"
+#     return full_name.title()
+
+# while True:
+#     print("\nPlease tell me your name: ")
+#     print("(enter 'q' to quit at any time)")
+
+#     f_name = input("First name: ")
+#     if f_name == 'q':
+#         break
+
+#     l_name = input("Last name: ")
+#     if l_name == 'q':
+#         break
+
+#     formatted_name = get_formatted_name(f_name, l_name)
+#     print(f"\nHello, {formatted_name}!")
+
+# CHALLENGE 3
+# 8-6 City Names
+print('\n')
+def city_country(city, country):
+    answer = f"{city}, {country}"
+    print(answer.title())
+
+city_country('austin', 'united states')
+
+# 8-7 Album
+print('\n')
+def make_album(artist, title, song_number=None):
+    """Returns a dictionary with info"""
+    albums = {
+        'artist': artist.title(), 
+        'album_title': title.title(),
+        'number_of_songs': song_number
+        }
+    return albums
+
+pink_floyd = make_album('Pink Floyd', 'Meddle', song_number=5)
+print(pink_floyd)
+
+def_leopard = make_album('Def Leopard', 'hysteria')
+print(def_leopard)
+
+# 8-8 User Albums
+def make_album(artist, title):
+    """Returns a dictionary with info"""
+    albums = {
+        'artist': artist.title(), 
+        'album_title': title.title(),
+        }
+    return albums
+
+while True:
+    print("\nEnter artist and album name.")
+    print("(Enter 'q' to quit at anytime.")
+
+    artist = input("What is the artist name: ")
+    if artist== 'q':
+        break
+
+    album = input("What is the album name: ")
+    if album == 'q':
+        break
+
+    music_dict = make_album(artist, album)
+    print(music_dict)
+
+# passing a LIST to a func
+def greet_users(names):
+    """Print simple greeting to each user in the list"""
+    for name in names:
+        msg = f"Hello, {name.title()}!"
+        print(msg)
+
+usernames = ['jon', 'brooke', 'bash']
+greet_users(usernames)
+
+# modifying a LIST in a FUNC
+# start with some designs that need to be printed.
+print("\n")
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+# simulate printing each design until none are left
+
+while unprinted_designs:
+    completed = unprinted_designs.pop()
+    print(f"Printing {completed}.")
+    completed_models.append(completed)
+
+# Display all completed models
+print("\nThe following models have been completed:")
+for model in completed_models:
+    print(model)
+
+# reorganizing the above with 2 functions
+print("\n")
+def print_models(unprinted_designs, completed_models):
+    """Simulate printing each design, until none are left.
+    Move each design to compoleted models after printing."""
+
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f"Printing model: {current_design}")
+        completed_models.append(current_design)
+
+def show_completed_models(completed_models):
+    """Show all the models that were printed"""
+    print("\nThe following models have been printed:")
+    
+    for completed_model in completed_models:
+        print(completed_model)
+
+unprinted_designs = ['phone case', 'robot armor', 'battle bot']
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
+
+# Preventing a Function from Modifying a List
+# you can send a copy of a list to a func like:
+# function_name(list_name[:])
+
+# slice notation makes a copy of the list to send tothe function.
+
+#CHALLENGE 4
+# 8-9 Messages
+print("\n")
+short_texts = ['brb', 'lol', 'wtf', 'cya']
+
+def show_messages(messages):
+    for message in messages:
+        print(f"{message}")
+
+show_messages(short_texts)
+
+# 8-10 Sending Messages
+print("\n")
+short_texts = ['brb', 'lol', 'wtf', 'cya']
+sent_messages = []
+
+def show_messages(messages):
+    for message in messages:
+        print(f"{message}")
+
+def send_messages(messages, new_list):
+    while messages:
+        for message in messages:
+            moved_message = messages.pop()
+            print(f"....moving {moved_message}...")
+
+            new_list.append(moved_message)
+
+
+# send_messages(short_texts, sent_messages)
+# print(sent_messages)
+# print(short_texts)
+
+# 8-11 Archived Messages
+print("\n")
+send_messages(short_texts[:], sent_messages) # sending a copy doesn't affect the original list. See print
+print(short_texts)
+print(sent_messages)
+
+# Passing an arbitrary Number of Arguments
+# The * in parameter name tells Python to make an empty tuple called toppings.
+# the arbitrary argument must come last if passing different kinds
+print("\n")
+def make_pizza(size, *toppings):
+    """Print the list of toppings that have been requested"""
+    print(f"\nMaking a {size.capitalize()} pizza with the following toppings:")
+
+    for topping in toppings:
+        print(f" - {topping}")
+
+make_pizza('m', 'pepperoni')
+make_pizza('l', 'cheese', 'pineapple', 'ham')
