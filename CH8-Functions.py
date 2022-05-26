@@ -333,3 +333,58 @@ def make_pizza(size, *toppings):
 
 make_pizza('m', 'pepperoni')
 make_pizza('l', 'cheese', 'pineapple', 'ham')
+
+# Using arbitrary keyword Arguments
+print("\n")
+
+def build_profile(first, last, **user_info): # the ** cases Python to create an empty dictionary
+    """Build a dictionary containing everything we know about a user."""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+
+user_profile = build_profile('jon', 'breen', location='Austin', job='aviation')
+print(user_profile)
+
+# Challenge
+print("\n")
+
+# 8-12 Sandwiches
+def make_sandwich(*toppings):
+    print('You ordered a sandiwch with:')
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_sandwich('ham', 'cheese', 'mustard')
+
+# 8-13 User Profile
+print("\n")
+
+the_midnight = build_profile('The', 'Midnight', genre='Synthwave', type='group', vocals=True)
+print(the_midnight)
+
+# 8-14 Cars
+print("\n")
+
+def build_car(manufacturer, model, **build_info):
+    build_info['manufacturer'] = manufacturer
+    build_info['model'] = model
+    return build_info
+
+car = build_car('ford', 'bronco', doors=2, engine=2.3, color='green')
+
+print(car)
+
+# Storing your functions in modules
+# stores functions in separate files and allows you to 
+# hide the program's code and focus on higher level logic
+# just have to 'import' the file and then call function. 
+
+# EX: import pizza - pizza is the name of the pizza.py file that houses the build_pizza func
+
+# Can also import sepcific functions
+# EX: 'from module_name import function_name
+
+# Using 'as' to Give a Function an Alias
+# EX: 'from pizza import make pizza as mp
+# then you just call func by alias - EX: mp('pepperoni', 'cheese', 'sauce) 
