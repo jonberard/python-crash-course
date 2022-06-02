@@ -387,4 +387,10 @@ print(car)
 
 # Using 'as' to Give a Function an Alias
 # EX: 'from pizza import make pizza as mp
-# then you just call func by alias - EX: mp('pepperoni', 'cheese', 'sauce) 
+# then you just call func by alias - EX: mp('pepperoni', 'cheese', 'sauce)
+
+
+# importing ALL Functions in a module
+# EX: from pizza import *
+# the * tells python to copy every function from module pizza into this program file
+
