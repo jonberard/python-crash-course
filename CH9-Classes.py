@@ -214,6 +214,15 @@ class Battery:
 
         print(f"This car can go about {range} miles on a full charge.")    
 
+    def upgrade_battery(self):
+        """check battery size and default to 100"""
+
+        if self.battery_size == 75:
+            self.battery_size = 100
+            print("...Upgrading battery...")
+        else:
+            print("Your battery is maxed out already.")
+
 
 #Inheritance
 # when one class inherits from another, it takes on the attributes and
@@ -244,4 +253,75 @@ my_tesla = ElectricCar('tesla', 'model 3', 2021)
 print(my_tesla.get_descriptive_name())
 my_tesla.battery.describe_battery() 
 my_tesla.battery.get_range()
+
+# Challenges
+# 9-6 Ice Cream Stand
+print("\n")
+class IceCreamStand(Restaurant):
+    """Simiple model of Ice Cream Stand"""
+
+    def __init__(self, name, cuisine='ice cream'):
+        """initialize an ice cream stand"""
+        super().__init__(name, cuisine)
+        self.flavors = []
+
+    def add_flavors(self):
+        print("We have the following flavors:")
+        for flavor in self.flavors:
+            print(f"- {flavor.title()}")
+            
+baskins = IceCreamStand('Baskins')
+baskins.flavors = ['chocolate', 'strawberry', 'neopolitan']
+baskins.describe_restaurant()
+baskins.add_flavors()
+
+# 9-7 Admin
+print("\n")
+class Admin(User):
+    """Admin class with privilege"""
+
+    def __init__(self, f_name, l_name):
+        super().__init__(f_name, l_name)
+        
+        self.privileges = Privileges()
+
+# 9-8 Privileges
+class Privileges:
+    """describe privilieges for admin"""
+
+    def __init__(self, privileges=[]):
+        self.privileges = privileges
+
+    def show_privileges(self):
+        print(f"following privileges granted:")
+        if self.privileges:
+            for privilege in self.privileges:
+                print(f"- {privilege}")
+        else:
+            print("- This user has no priviliges")
+
+
+admin_1 = Admin('frank', 'trombone')
+admin_1.describe_user()
+admin_1.privileges.show_privileges()
+
+print("\nAdding Privileges...")
+admin_1.privileges.privileges = [
+    'can add post', 
+    'can delete post', 
+    'can ban user'
+    ]
+
+admin_1.privileges.show_privileges()
+
+
+# 9-9 Battery Upgrade
+print("\n")
+leaf = ElectricCar('Nissan', 'Leaf', 2015)
+leaf.battery.get_range()
+leaf.battery.upgrade_battery()
+leaf.battery.get_range()
+
+
+
 
